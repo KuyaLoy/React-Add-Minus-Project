@@ -1,0 +1,92 @@
+.CalcRow {
+  li {
+    display: grid;
+    grid-template-columns: 15% 40% 20% 20%;
+    grid-template-rows: 1fr;
+    gap: 1.5%;
+
+    margin-bottom: 10px;
+
+    .sign-buttons {
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      gap: 5px;
+
+      button {
+        width: 50%;
+        height: 100%;
+        background-color: white;
+
+        &.active {
+          background-color: #eaebed;
+          border: 1px solid rgb(79, 79, 88);
+        }
+      }
+    }
+
+    * {
+      border: #9e9e9e 1px solid;
+      border-radius: 5px;
+      &:disabled {
+        cursor: not-allowed;
+        opacity: 0.5;
+      }
+    }
+
+    select {
+      height: 50px;
+      padding: 5px;
+
+      @media (max-width: 600px) {
+        height: 40px;
+      }
+      display: inline-block;
+
+      cursor: pointer;
+      outline: 0;
+      background: white;
+      color: black;
+      //appearance: none;
+      text-align: center;
+      direction: ltr;
+
+      &:hover,
+      &:focus {
+        color: #000000;
+        background: #eaeaea;
+      }
+    }
+
+    input {
+      outline: none;
+      padding: 10px;
+      font-size: 16px;
+    }
+    button {
+      cursor: pointer;
+      @media (max-width: 600px) {
+        font-size: 12px;
+      }
+      &.DeleteButton {
+        background-color: #fef2f2;
+        color: #ab4747;
+
+        &:disabled {
+          color: #e0b0b0;
+          background-color: #fcf6f6;
+        }
+      }
+      &.DisableButton {
+        color: #9e9e9e;
+        border: 1px solid #9e9e9e;
+        background-color: white;
+        &.Enable {
+          color: green;
+        }
+      }
+    }
+  }
+}
